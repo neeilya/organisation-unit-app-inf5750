@@ -17,26 +17,13 @@ function onlySuccessResponses(response) {
 }
 
 export function saveOrganisationUnit(organisationUnit) {
-    return fetch(`${serverUrl}/organisationUnits`, Object.assign({}, fetchOptions, { method: 'POST', body: JSON.stringify(organisationUnit) }))
-        .then(onlySuccessResponses)
-        .then(response => response.json())
-        .catch(error => console.error(error));
+    // TODO: Implement
 }
 
 export function deleteOrganisationUnit(organisationUnitId) {
-    return fetch(
-        `${serverUrl}/organisationUnits/${organisationUnitId}`,
-        {
-            headers: fetchOptions.headers,
-            method: 'DELETE',
-        }
-    )
-    .then(onlySuccessResponses);
+    // TODO: Implement
 }
 
 export function loadOrganisationUnits() {
-    return fetch(`${serverUrl}/organisationUnits?paging=false&level=1`, fetchOptions)
-        .then(onlySuccessResponses)
-        .then(response => response.json())
-        .then(({ organisationUnits }) => organisationUnits);
+    // TODO: Implement
 }
