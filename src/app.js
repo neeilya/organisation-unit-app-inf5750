@@ -10,8 +10,11 @@ function loadOrganisationUnitsIntoList() {
         });
 }
 
+// Call loadOrganisationUnits once to load the initial list
+// We will call this function again later to reload the list
 loadOrganisationUnitsIntoList();
 
+// Register a handler that should fire when the submit button is clicked
 registerSubmitHandler(function () {
     saveOrganisationUnit(getDataFromForm())
         .then(loadOrganisationUnitsIntoList)
@@ -21,9 +24,11 @@ registerSubmitHandler(function () {
 registerClickHandlerForItems(function (element) {
     const organisationUnitId = element.dataset.id;
 
+    // Set the element's HTML to show a temporary 'Deleting <name>'
     element.innerHTML = `Deleting ${element.innerHTML}`;
 
     deleteOrganisationUnit(organisationUnitId)
         .catch(() => alert('delete failed!'))
+        // Reload the list
         .then(loadOrganisationUnitsIntoList);
 });
