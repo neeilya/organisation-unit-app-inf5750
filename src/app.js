@@ -10,13 +10,14 @@ function loadOrganisationUnitsIntoList() {
         });
 }
 
-
 loadOrganisationUnitsIntoList();
+
 registerSubmitHandler(function () {
     saveOrganisationUnit(getDataFromForm())
         .then(loadOrganisationUnitsIntoList)
         .catch(() => alert('could not load list'));
 });
+
 registerClickHandlerForItems(function (element) {
     const organisationUnitId = element.dataset.id;
 
