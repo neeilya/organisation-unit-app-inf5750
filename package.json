@@ -12,5 +12,12 @@
   "devDependencies": {
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.7"
+  },
+  "dependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   }
 }
